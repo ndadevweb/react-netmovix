@@ -1,32 +1,33 @@
 import React, { Component } from 'react'
+import { HeaderImg } from '../components'
 
 const movies = [
 	{
-		backdrop_path: "../../public/images/Fast_large.jpg",
+		backdrop_path: './images/Fast_large.jpg',
 		id: 475557,
 		overview: "Lorem ipsum...",
-		poster_path: "../../public/images/Fast_small.jpg",
+		poster_path: './images/Fast_small.jpg',
 		title: "Fast and Furious"
 	},
 	{
-		backdrop_path: "../../public/images/Fast_large.jpg",
+		backdrop_path: './images/Fast_large.jpg',
 		id: 475558,
 		overview: "Lorem ipsum...",
-		poster_path: "../../public/images/Fast_small.jpg",
+		poster_path: './images/Fast_small.jpg',
 		title: "Fast and Furious"
 	},
 	{
-		backdrop_path: "../../public/images/Fast_large.jpg",
+		backdrop_path: './images/Fast_large.jpg',
 		id: 475559,
 		overview: "Lorem ipsum...",
-		poster_path: "../../public/images/Fast_small.jpg",
+		poster_path: './images/Fast_small.jpg',
 		title: "Fast and Furious"
 	},
 	{
-		backdrop_path: "../../public/images/Fast_large.jpg",
+		backdrop_path: './images/Fast_large.jpg',
 		id: 475560,
 		overview: "Lorem ipsum...",
-		poster_path: "../../public/images/Fast_small.jpg",
+		poster_path: './images/Fast_small.jpg',
 		title: "Fast and Furious"
 	}
 ];
@@ -34,7 +35,13 @@ const movies = [
 class Home extends Component {
 	render() {
 		return (
-			<div> Home </div>
+			<div>
+				<HeaderImg
+					title="Fast and Furious"
+					overview="Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
+					imgSrc={ './images/Fast_large.jpg' }
+				/>
+			</div>
 		)
 	}
 }
