@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HeaderImg } from '../components'
+import { HeaderImg, SearchBar } from '../components'
 
 const movies = [
 	{
@@ -41,6 +41,7 @@ class Home extends Component {
 					overview="Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
 					imgSrc={ './images/Fast_large.jpg' }
 				/>
+				<SearchBar />
 			</div>
 		)
 	}
