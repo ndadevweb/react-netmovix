@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Home } from './routes'
-import { Header } from './components'
+import { Header, Spinner } from './components'
 import { API_URL_LAST, API_URL_SEARCH } from './config'
 import './App.css';
 
 class App extends Component {
 	state = {
-		loading: false,
+		loading: true,
 		movies: [],
 		badge: 0,
-		image: '',
+		image: null,
 		mTitle: '',
 		mDesc: '',
 		activePage: 0,
@@ -99,15 +100,28 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
-				<Header badge={ this.state.badge } />
-				<Home
-				{ ...this.state }
-				onSearchClick={ this.handleSearch }
-				onButtonClick={ this.loadMore }
-				/>
-			</div>
-		);
+			<Router>
+				<div className="App">
+					<Header badge={ this.state.badge } />
+					{ this.state.image == false ?
+						(
+							<Spinner />
+						) :
+						(
+							<Switch>
+								<Route path="/" exact render={ () => (
+									<Home
+										{ ...this.state }
+										onSearchClick={ this.handleSearch }
+										onButtonClick={ this.loadMore }
+									/>
+								)} />
+							</Switch>
+						)
+					}
+				</div>
+			</Router>
+		)
 	}
 }
 

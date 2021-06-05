@@ -7,7 +7,6 @@ let wish;
 class PosterList extends Component {
 	renderPoster = () => {
 		return this.props.movies.map(movie => {
-			//const imgSrc = './images/movies/'+movie.backdrop_path;
 			const imgSrc = movie.poster
 			wish = false
 
