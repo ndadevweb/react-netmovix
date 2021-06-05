@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { Home, Details } from './routes'
+import { Home, Details, NotFound } from './routes'
 import { Header, Spinner } from './components'
 import { API_URL_LAST, API_URL_SEARCH } from './config'
 import './App.css';
@@ -103,7 +103,7 @@ class App extends Component {
 			<Router>
 				<div className="App">
 					<Header badge={ this.state.badge } />
-					{ this.state.image == false ?
+					{ this.state.image === false ?
 						(
 							<Spinner />
 						) :
@@ -117,6 +117,7 @@ class App extends Component {
 									/>
 								)} />
 								<Route path="/:id" exact component={ Details } />
+								<Route component={ NotFound } />
 							</Switch>
 						)
 					}
