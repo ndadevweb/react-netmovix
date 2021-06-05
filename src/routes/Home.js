@@ -1,49 +1,20 @@
 import React, { Component } from 'react'
 import { HeaderImg, SearchBar, PosterList, LoadButton } from '../components'
 
-const movies = [
-	{
-		backdrop_path: './images/Fast_large.jpg',
-		id: 475557,
-		overview: "Lorem ipsum...",
-		poster_path: './images/Fast_small.jpg',
-		title: "Fast and Furious"
-	},
-	{
-		backdrop_path: './images/Fast_large.jpg',
-		id: 475558,
-		overview: "Lorem ipsum...",
-		poster_path: './images/Fast_small.jpg',
-		title: "Fast and Furious"
-	},
-	{
-		backdrop_path: './images/Fast_large.jpg',
-		id: 475559,
-		overview: "Lorem ipsum...",
-		poster_path: './images/Fast_small.jpg',
-		title: "Fast and Furious"
-	},
-	{
-		backdrop_path: './images/Fast_large.jpg',
-		id: 475560,
-		overview: "Lorem ipsum...",
-		poster_path: './images/Fast_small.jpg',
-		title: "Fast and Furious"
-	}
-];
-
 class Home extends Component {
 	render() {
+		const { mTitle, mDesc, image, movies, loading } = this.props
+
 		return (
 			<div>
 				<HeaderImg
-					title="Fast and Furious"
-					overview="Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
-					imgSrc={ './images/Fast_large.jpg' }
+					title={ mTitle }
+					overview={ mDesc }
+					imgSrc={ image }
 				/>
-				<SearchBar />
+				<SearchBar onSearchClick={ this.props.onSearchClick } />
 				<PosterList movies={ movies } />
-				<LoadButton loading={ false } />
+				<LoadButton onButtonClick={ this.props.onButtonClick } loading={ loading } />
 			</div>
 		)
 	}
