@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { Home } from './routes'
+import { Home, Details } from './routes'
 import { Header, Spinner } from './components'
 import { API_URL_LAST, API_URL_SEARCH } from './config'
 import './App.css';
@@ -116,6 +116,7 @@ class App extends Component {
 										onButtonClick={ this.loadMore }
 									/>
 								)} />
+								<Route path="/:id" exact component={ Details } />
 							</Switch>
 						)
 					}
