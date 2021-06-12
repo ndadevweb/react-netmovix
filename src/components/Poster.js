@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
+import { Link } from 'react-router-dom'
 import '../css/Poster.css'
 
 class Poster extends Component {
@@ -32,11 +33,13 @@ class Poster extends Component {
 				onMouseLeave={ this.hideOverlay }
 				className="poster"
 			>
-				<img className="poster--img" src={ this.props.imgSrc } title={ this.props.mTitle } alt={ this.props.mTitle } />
-				{ this.state.hover ? (
+				<Link to={ { pathname: `/${ this.props.id }`} }>
+					<img className="poster--img" src={ this.props.imgSrc } title={ this.props.mTitle } alt={ this.props.mTitle } />
+				</Link>
+				{ this.state.hover === true ? (
 					<div className="poster--overlay">
 						<h3 className="poster--overlay__text">LISTE DE SOUHAITS</h3>
-						{ this.props.wished ? (
+						{ this.props.wished === true ? (
 							<FontAwesome onclick={ this.remove } className="poster--icon" name="heart" size="3x" />
 						) :
 						(

@@ -1,0 +1,10 @@
+{
+"page": 1,
+"total_pages": 1,
+"results":[
+{"title":"Iron Man","backdrop_path":"ironman.jpg","overview":"Iron Man est un film américain réalisé par Jon Favreau, sorti en 2008. Il raconte les origines et les débuts du personnage éponyme issu du comics publié par Marvel. Il s'agit de la première étape de l' univers cinématographique Marvel"},
+{"title":"Iron Man 2","backdrop_path":"ironman2.jpg","overview":"Au moment où Tony Stark révèle au monde qu'il est Iron Man, à Moscou, Anton Vanko meurt dans la misère. Son fils Ivan décide alors de se venger de la famille Stark et jure de faire tomber Tony aussi bas que sa propre famille est tombée à cause d'Howard Stark."},
+{"title":"Iron Man 3","backdrop_path":"ironman3.jpg","overview":"Tony Stark, l'industriel flamboyant qui est aussi Iron Man, est confronté cette fois à un ennemi qui va attaquer sur tous les fronts. Lorsque son univers personnel est détruit, Stark se lance dans une quête acharnée pour retrouver les coupables. Plus que jamais, son courage va être mis à l'épreuve, à chaque instant."},
+{"title":"Captain America The First Avenger","backdrop_path":"captainamerica.jpg","overview":"Le film raconte l'histoire de Steve Rogers, un jeune homme frêle de Brooklyn transformé en un super-soldat nommé Captain America durant la Seconde Guerre mondiale. Il doit notamment arrêter Crâne rouge, chef d'HYDRA, qui a mis au point des armes surpuissantes en utilisant une mystérieuse source d'énergie."}
+]
+}
