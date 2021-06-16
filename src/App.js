@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+
 import { Home, Details, NotFound } from './routes'
 import { Header, Spinner } from './components'
 import { API_URL_LAST, API_URL_SEARCH } from './config'
+import store from './store'
+
 import './App.css';
 
 class App extends Component {
@@ -100,29 +104,31 @@ class App extends Component {
 
 	render() {
 		return (
-			<Router>
-				<div className="App">
-					<Header badge={ this.state.badge } />
-					{ this.state.image === false ?
-						(
-							<Spinner />
-						) :
-						(
-							<Switch>
-								<Route path="/" exact render={ () => (
-									<Home
-										{ ...this.state }
-										onSearchClick={ this.handleSearch }
-										onButtonClick={ this.loadMore }
-									/>
-								)} />
-								<Route path="/:id" exact component={ Details } />
-								<Route component={ NotFound } />
-							</Switch>
-						)
-					}
-				</div>
-			</Router>
+			<Provider store={ store }>
+				<Router>
+					<div className="App">
+						<Header badge={ this.state.badge } />
+						{ this.state.image === false ?
+							(
+								<Spinner />
+							) :
+							(
+								<Switch>
+									<Route path="/" exact render={ () => (
+										<Home
+											{ ...this.state }
+											onSearchClick={ this.handleSearch }
+											onButtonClick={ this.loadMore }
+										/>
+									)} />
+									<Route path="/:id" exact component={ Details } />
+									<Route component={ NotFound } />
+								</Switch>
+							)
+						}
+					</div>
+				</Router>
+			</Provider>
 		)
 	}
 }

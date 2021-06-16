@@ -10,6 +10,14 @@ class PosterList extends Component {
 			const imgSrc = movie.poster
 			wish = false
 
+			if(this.props.localMovies) {
+				this.props.localMovies.forEach(localMovie => {
+					if(movie.id === localMovie.id) {
+						wish = true
+					}
+				})
+			}
+
 			return (
 				<Poster
 					key={ movie.id }
